@@ -1,0 +1,268 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		657207C81868033E0055729F /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657207BD1868033E0055729F /* Tree.cpp */; };
+		657207C91868033E0055729F /* Tree.h in Headers */ = {isa = PBXBuildFile; fileRef = 657207BE1868033E0055729F /* Tree.h */; };
+		657207CA1868033E0055729F /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657207BF1868033E0055729F /* List.cpp */; };
+		657207CB1868033E0055729F /* List.h in Headers */ = {isa = PBXBuildFile; fileRef = 657207C01868033E0055729F /* List.h */; };
+		657207CC1868033E0055729F /* upo-lib.h in Headers */ = {isa = PBXBuildFile; fileRef = 657207C11868033E0055729F /* upo-lib.h */; };
+		657207CD1868033E0055729F /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657207C21868033E0055729F /* Queue.cpp */; };
+		657207CE1868033E0055729F /* Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657207C31868033E0055729F /* Stack.cpp */; };
+		657207CF1868033E0055729F /* Queue.h in Headers */ = {isa = PBXBuildFile; fileRef = 657207C41868033E0055729F /* Queue.h */; };
+		657207D01868033E0055729F /* Stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 657207C51868033E0055729F /* Stack.h */; };
+		657207D11868033E0055729F /* CircularQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 657207C61868033E0055729F /* CircularQueue.h */; };
+		657207D21868033E0055729F /* CircularQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657207C71868033E0055729F /* CircularQueue.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		657207A01868017E0055729F /* libupo-lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libupo-lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		657207BD1868033E0055729F /* Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tree.cpp; sourceTree = "<group>"; };
+		657207BE1868033E0055729F /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		657207BF1868033E0055729F /* List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = List.cpp; sourceTree = "<group>"; };
+		657207C01868033E0055729F /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		657207C11868033E0055729F /* upo-lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "upo-lib.h"; sourceTree = "<group>"; };
+		657207C21868033E0055729F /* Queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cpp; sourceTree = "<group>"; };
+		657207C31868033E0055729F /* Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stack.cpp; sourceTree = "<group>"; };
+		657207C41868033E0055729F /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		657207C51868033E0055729F /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		657207C61868033E0055729F /* CircularQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularQueue.h; sourceTree = "<group>"; };
+		657207C71868033E0055729F /* CircularQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircularQueue.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6572079D1868017E0055729F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		657207971868017D0055729F = {
+			isa = PBXGroup;
+			children = (
+				657207A71868018A0055729F /* Source */,
+				657207A11868017E0055729F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		657207A11868017E0055729F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				657207A01868017E0055729F /* libupo-lib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		657207A71868018A0055729F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				657207C11868033E0055729F /* upo-lib.h */,
+				657207BE1868033E0055729F /* Tree.h */,
+				657207BD1868033E0055729F /* Tree.cpp */,
+				657207C01868033E0055729F /* List.h */,
+				657207BF1868033E0055729F /* List.cpp */,
+				657207C41868033E0055729F /* Queue.h */,
+				657207C21868033E0055729F /* Queue.cpp */,
+				657207C51868033E0055729F /* Stack.h */,
+				657207C31868033E0055729F /* Stack.cpp */,
+				657207C61868033E0055729F /* CircularQueue.h */,
+				657207C71868033E0055729F /* CircularQueue.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6572079E1868017E0055729F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				657207CB1868033E0055729F /* List.h in Headers */,
+				657207C91868033E0055729F /* Tree.h in Headers */,
+				657207CF1868033E0055729F /* Queue.h in Headers */,
+				657207D01868033E0055729F /* Stack.h in Headers */,
+				657207CC1868033E0055729F /* upo-lib.h in Headers */,
+				657207D11868033E0055729F /* CircularQueue.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6572079F1868017E0055729F /* upo-lib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 657207A41868017E0055729F /* Build configuration list for PBXNativeTarget "upo-lib" */;
+			buildPhases = (
+				6572079C1868017E0055729F /* Sources */,
+				6572079D1868017E0055729F /* Frameworks */,
+				6572079E1868017E0055729F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "upo-lib";
+			productName = "upo-lib";
+			productReference = 657207A01868017E0055729F /* libupo-lib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		657207981868017D0055729F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = daniel;
+			};
+			buildConfigurationList = 6572079B1868017D0055729F /* Build configuration list for PBXProject "upo-lib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 657207971868017D0055729F;
+			productRefGroup = 657207A11868017E0055729F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6572079F1868017E0055729F /* upo-lib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6572079C1868017E0055729F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				657207CE1868033E0055729F /* Stack.cpp in Sources */,
+				657207CD1868033E0055729F /* Queue.cpp in Sources */,
+				657207D21868033E0055729F /* CircularQueue.cpp in Sources */,
+				657207C81868033E0055729F /* Tree.cpp in Sources */,
+				657207CA1868033E0055729F /* List.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		657207A21868017E0055729F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		657207A31868017E0055729F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		657207A51868017E0055729F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		657207A61868017E0055729F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6572079B1868017D0055729F /* Build configuration list for PBXProject "upo-lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				657207A21868017E0055729F /* Debug */,
+				657207A31868017E0055729F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		657207A41868017E0055729F /* Build configuration list for PBXNativeTarget "upo-lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				657207A51868017E0055729F /* Debug */,
+				657207A61868017E0055729F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 657207981868017D0055729F /* Project object */;
+}

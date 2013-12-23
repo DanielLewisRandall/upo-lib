@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CE3D595A-7B7D-4407-A859-E781E9D38DCE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>upo-lib</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>80906F25-453D-4802-8898-5A2D2E28B97F</key>
+		<string>https://github.com/DanielLewisRandall/upo-lib</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>upo-lib.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>80906F25-453D-4802-8898-5A2D2E28B97F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/DanielLewisRandall/upo-lib</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>80906F25-453D-4802-8898-5A2D2E28B97F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>80906F25-453D-4802-8898-5A2D2E28B97F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>upo-lib</string>
+		</dict>
+	</array>
+</dict>
+</plist>

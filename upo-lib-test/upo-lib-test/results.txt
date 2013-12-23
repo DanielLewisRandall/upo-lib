@@ -1,0 +1,100 @@
+Testing List:
+
+list should be empty:
+PASS: getCount() == 0
+PASS: RemoveHead() == NULL
+PASS: getHead() == NULL
+PASS: getTail() == NULL
+add some items:
+PASS: AddHead() == ALPHA
+PASS: AddHead() == BRAVO
+PASS: AddHead() == CHARLIE
+PASS: AddTail() == DELTA
+PASS: AddTail() == ECHO
+PASS: AddTail() == FOXTROT
+list should have 6 elements:
+PASS: getCount() == 6
+PASS: getHead() == CHARLIE
+PASS: getTail() == FOXTROT
+remove all items:
+PASS: RemoveHead() == CHARLIE
+PASS: RemoveHead() == BRAVO
+PASS: RemoveHead() == ALPHA
+PASS: RemoveHead() == DELTA
+PASS: RemoveHead() == ECHO
+PASS: RemoveHead() == FOXTROT
+list should be empty (again):
+PASS: getCount() == 0
+PASS: RemoveHead() == NULL
+PASS: getHead() == NULL
+PASS: getTail() == NULL
+
+
+Testing Queue:
+
+queue should be empty:
+PASS: getCount() == 0
+PASS: Dequeue() == NULL
+PASS: getFront() == NULL
+PASS: getBack() == NULL
+enqueue some items:
+PASS: Enqueue() == ALPHA
+PASS: Enqueue() == BRAVO
+PASS: Enqueue() == CHARLIE
+PASS: Enqueue() == DELTA
+PASS: Enqueue() == ECHO
+PASS: Enqueue() == FOXTROT
+queue should have 6 elements:
+PASS: getCount() == 6
+PASS: getFront() == ALPHA
+PASS: getBack() == FOXTROT
+dequeue all items:
+PASS: Dequeue() == ALPHA
+PASS: Dequeue() == BRAVO
+PASS: Dequeue() == CHARLIE
+PASS: Dequeue() == DELTA
+PASS: Dequeue() == ECHO
+PASS: Dequeue() == FOXTROT
+queue should be empty (again):
+PASS: getCount() == 0
+PASS: Dequeue() == NULL
+PASS: getFront() == NULL
+PASS: getBack() == NULL
+
+
+Testing Stack:
+
+stack should be empty:
+PASS: getCount() == 0
+PASS: Pop() == NULL
+PASS: getTop() == NULL
+PASS: getBottom() == NULL
+push some items:
+PASS: Push() == ALPHA
+PASS: Push() == BRAVO
+PASS: Push() == CHARLIE
+PASS: Push() == DELTA
+PASS: Push() == ECHO
+PASS: Push() == FOXTROT
+stack should have 6 elements:
+PASS: getCount() == 6
+PASS: getTop() == FOXTROT
+PASS: getBottom() == ALPHA
+dequeue all items:
+PASS: Pop() == FOXTROT
+PASS: Pop() == ECHO
+PASS: Pop() == DELTA
+PASS: Pop() == CHARLIE
+PASS: Pop() == BRAVO
+PASS: Pop() == ALPHA
+stack should be empty (again):
+PASS: getCount() == 0
+PASS: Pop() == NULL
+PASS: getTop() == NULL
+PASS: getBottom() == NULL
+
+
+Tests:  69
+Passed: 69
+
+Program ended with exit code: 0
