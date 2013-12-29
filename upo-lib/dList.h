@@ -30,56 +30,66 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // NOTE: the classes in this file have not been unit tested, yet!
 
-#ifndef __Library__Tree__
-#define __Library__Tree__
+#ifndef __CodeTree__dList__
+#define __CodeTree__dList__
 
-#include "List.h"
+#include "upo-lib.h"
 
-class TreeBranch // represents a Tree Branch
+class dListElement // represents a double-linked List Element
 {
+	friend class dList;
+	
 	private:
-		List m_Branches;
+		dListElement* m_pNext; // pointer to the Next element
+		dListElement* m_pPrev; // pointer to the Previous element
 
 	public:
-		OBJECT* m_pObject;
-
-		TreeBranch(OBJECT* pObject);
+		OBJECT* m_pObject; // pointer to an Object
 		
-		~TreeBranch();
+		dListElement(OBJECT* pObject); // Element constructor
 		
-		// adds a branch to the tail of the branch list:
-		TreeBranch* AddBranch(OBJECT* pObject);
+		dListElement* getNext(); // get pointer to next element
 		
-		// removes the head branch and returns its object pointer:
-		OBJECT* RemoveBranch();
-		
-		// get pointer to next branch:
-		ListElement* getNextBranch(ListElement* pElement);
-
-		// get count of child branches:
-		uint32_t getBranchCount();
-		
-		// utility for accessing the branch object in a list element:
-		static TreeBranch* asBranch(ListElement* pElement);
+		dListElement* getPrev(); // get pointer to next element
 };
 
-inline TreeBranch* TreeBranch::asBranch(ListElement* pElement)
-{
-	return (pElement) ? (TreeBranch*)pElement->m_pObject : NULL;
-}
-
-class Tree // represents a Tree
+class dList // represents a double-linked List
 {
 	private:
-		TreeBranch* m_pTrunk;
+		uint32_t m_nCount;
+		dListElement* m_pHead; // pointer to the Head element
+		dListElement* m_pTail; // pointer to the Tail element
 		
+		// sets head/tail pointers when element added to empty list
+		void newEnds(dListElement* pNewElement);
+
+		// updates head/tail pointers when an element is removed
+		void fixEnds(dListElement* pNewElement);
+
 	public:
-		TreeBranch* getTrunk();
+		uint32_t getCount(); // get count of elements
 		
-		Tree(OBJECT* pObject);
+		dListElement* getHead(); // get pointer to the Head element
+	
+		dListElement* getTail();  // get pointer to the Tail element
 		
-		~Tree();
+		dList(); // dList constructor
+		
+		~dList(); // dList destructor
+		
+		dListElement* AddHead(OBJECT* pObject);
+		
+		dListElement* InsertBefore(dListElement* pElement, OBJECT* pObject);
+		
+		dListElement* InsertAfter(dListElement* pElement, OBJECT* pObject);
+		
+		dListElement* AddTail(OBJECT* pObject);
+
+		OBJECT* RemoveHead();
+
+		OBJECT* RemoveTail();
+
+		OBJECT* Remove(dListElement* pElement);
 };
 
-
-#endif /* defined(__Library__Tree__) */
+#endif /* defined(__CodeTree__dList__) */
