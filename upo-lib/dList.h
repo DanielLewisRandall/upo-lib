@@ -50,7 +50,7 @@ class dListElement // represents a double-linked List Element
 		
 		dListElement* getNext(); // get pointer to next element
 		
-		dListElement* getPrev(); // get pointer to next element
+		dListElement* getPrev(); // get pointer to previous element
 };
 
 class dList // represents a double-linked List
