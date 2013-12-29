@@ -28,8 +28,8 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef CodeTree_library_h
-#define CodeTree_library_h
+#ifndef UPO_LIB_library_h
+#define UPO_LIB_library_h
 
 #include <stddef.h>
 #include <stdint.h>

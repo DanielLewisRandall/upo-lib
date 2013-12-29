@@ -30,8 +30,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // NOTE: the classes in this file have not been unit tested, yet!
 
-#ifndef __Library__Tree__
-#define __Library__Tree__
+#ifndef __UPO_LIB__Tree__
+#define __UPO_LIB__Tree__
 
 #include "List.h"
 
@@ -82,4 +82,4 @@ class Tree // represents a Tree
 };
 
 
-#endif /* defined(__Library__Tree__) */
+#endif /* defined(__UPO_LIB__Tree__) */

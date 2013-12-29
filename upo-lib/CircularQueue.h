@@ -31,8 +31,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // A circular queue class, restricted to sizes that are a power of 2.
 // Uses in this program: real-time parsing, high-performance buffering.
 
-#ifndef __CodeTree__CircularQueue__
-#define __CodeTree__CircularQueue__
+#ifndef __UPO_LIB__CircularQueue__
+#define __UPO_LIB__CircularQueue__
 
 #include "upo-lib.h"
 
@@ -61,4 +61,4 @@ class CircularQueue
 		uint32_t Size();
 };
 
-#endif /* defined(__CodeTree__CircularQueue__) */
+#endif /* defined(__UPO_LIB__CircularQueue__) */

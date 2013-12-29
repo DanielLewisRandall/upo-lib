@@ -31,8 +31,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // A simple stack class.
 // Uses in this program: parsing, tree traversal, recursion.
 
-#ifndef __CodeTree__Stack__
-#define __CodeTree__Stack__
+#ifndef __UPO_LIB__Stack__
+#define __UPO_LIB__Stack__
 
 #include "List.h"
 
@@ -57,4 +57,4 @@ class Stack // represents a Stack
 		OBJECT* Pop(); // Pop function
 };
 
-#endif /* defined(__CodeTree__Stack__) */
+#endif /* defined(__UPO_LIB__Stack__) */

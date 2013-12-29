@@ -30,8 +30,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // NOTE: the classes in this file have not been unit tested, yet!
 
-#ifndef __CodeTree__dList__
-#define __CodeTree__dList__
+#ifndef __UPO_LIB__dList__
+#define __UPO_LIB__dList__
 
 #include "upo-lib.h"
 
@@ -92,4 +92,4 @@ class dList // represents a double-linked List
 		OBJECT* Remove(dListElement* pElement);
 };
 
-#endif /* defined(__CodeTree__dList__) */
+#endif /* defined(__UPO_LIB__dList__) */

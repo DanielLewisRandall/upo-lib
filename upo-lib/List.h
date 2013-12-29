@@ -28,8 +28,8 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __CodeTree__List__
-#define __CodeTree__List__
+#ifndef __UPO_LIB__List__
+#define __UPO_LIB__List__
 
 #include "upo-lib.h"
 
@@ -73,4 +73,4 @@ class List // represents a List
 		OBJECT* RemoveHead(); // RemoveHead function
 };
 
-#endif /* defined(__CodeTree__List__) */
+#endif /* defined(__UPO_LIB__List__) */

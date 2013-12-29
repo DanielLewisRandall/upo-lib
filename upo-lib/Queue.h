@@ -31,8 +31,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // A simple queue class.
 // Uses in this program: parsing, tree traversal, recursion.
 
-#ifndef __CodeTree__Queue__
-#define __CodeTree__Queue__
+#ifndef __UPO_LIB__Queue__
+#define __UPO_LIB__Queue__
 
 #include "List.h"
 
@@ -57,4 +57,4 @@ class Queue // represents a Queue
 		OBJECT* Dequeue(); // Dequeue function
 };
 
-#endif /* defined(__CodeTree__Queue__) */
+#endif /* defined(__UPO_LIB__Queue__) */
