@@ -37,43 +37,15 @@ TreeBranch::TreeBranch(OBJECT* pObject) : m_Branches()
 
 TreeBranch::~TreeBranch()
 {
-	while (getBranchCount())
+	while (m_Branches.getHead())
 	{
-		TreeBranch* pBranch = (TreeBranch*)RemoveBranch();
+		TreeBranch* pBranch = asBranch(m_Branches.RemoveHead());
 		
 		if (pBranch)
 		{
 			delete pBranch;
 		}
 	}
-}
-
-// adds a branch to the tail of the branch list:
-TreeBranch* TreeBranch::AddBranch(OBJECT* pObject)
-{
-	TreeBranch* pBranch = new TreeBranch(pObject); // create a new branch
-	
-	ListElement* pElement = m_Branches.AddTail(pBranch);
-	
-	return (pElement) ? (TreeBranch*)pElement->m_pObject : NULL;
-}
-
-// removes the head branch and returns its object pointer:
-OBJECT* TreeBranch::RemoveBranch()
-{
-	return m_Branches.RemoveHead();
-}
-
-// get pointer to next branch:
-ListElement* TreeBranch::getNextBranch(ListElement* pElement)
-{
-	return pElement->getNext();
-}
-
-// get count of child branches:
-uint32_t TreeBranch::getBranchCount()
-{
-	return m_Branches.getCount();
 }
 
 TreeBranch* Tree::getTrunk()
@@ -83,7 +55,7 @@ TreeBranch* Tree::getTrunk()
 
 Tree::Tree(OBJECT* pObject)
 {
-	m_pTrunk = new TreeBranch(pObject);
+	m_pTrunk = TreeBranch::newBranch(pObject);
 }
 
 Tree::~Tree()

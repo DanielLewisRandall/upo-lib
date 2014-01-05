@@ -33,39 +33,42 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef __UPO_LIB__Tree__
 #define __UPO_LIB__Tree__
 
-#include "List.h"
+#include "dList.h"
 
 class TreeBranch // represents a Tree Branch
 {
-	private:
-		List m_Branches;
-
 	public:
+		dList m_Branches;
+
 		OBJECT* m_pObject;
 
 		TreeBranch(OBJECT* pObject);
 		
 		~TreeBranch();
 		
-		// adds a branch to the tail of the branch list:
-		TreeBranch* AddBranch(OBJECT* pObject);
+		// utility for accessing the branch object in a dListElement:
+		static TreeBranch* asBranch(dListElement* pElement);
 		
-		// removes the head branch and returns its object pointer:
-		OBJECT* RemoveBranch();
+		// utility for accessing an object pointer as a TreeBranch pointer:
+		static TreeBranch* asBranch(OBJECT* pObject);
 		
-		// get pointer to next branch:
-		ListElement* getNextBranch(ListElement* pElement);
-
-		// get count of child branches:
-		uint32_t getBranchCount();
-		
-		// utility for accessing the branch object in a list element:
-		static TreeBranch* asBranch(ListElement* pElement);
+		// utility for creating a new branch for the branch list:
+		static TreeBranch* newBranch(OBJECT* pObject);
 };
 
-inline TreeBranch* TreeBranch::asBranch(ListElement* pElement)
+inline TreeBranch* TreeBranch::asBranch(dListElement* pElement)
 {
-	return (pElement) ? (TreeBranch*)pElement->m_pObject : NULL;
+	return (pElement) ? asBranch(pElement->m_pObject) : NULL;
+}
+
+inline TreeBranch* TreeBranch::asBranch(OBJECT* pObject)
+{
+	return reinterpret_cast<TreeBranch*>(pObject);
+}
+
+inline TreeBranch* TreeBranch::newBranch(OBJECT* pObject)
+{
+	return new TreeBranch(pObject);
 }
 
 class Tree // represents a Tree
