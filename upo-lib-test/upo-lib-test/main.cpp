@@ -32,9 +32,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 #include <iostream>
-#include "../../upo-lib/Queue.h"
-#include "../../upo-lib/Stack.h"
 
+// NOTE:
+//  including template class implementation files
+//  to prevent compiler errors:
+#include "../../upo-lib/List.h"
+#include "../../upo-lib/List.cpp"
+#include "../../upo-lib/Queue.h"
+#include "../../upo-lib/Queue.cpp"
+#include "../../upo-lib/Stack.h"
+#include "../../upo-lib/Stack.cpp"
 
 int g_tests = 0;
 int g_passd = 0;
@@ -85,9 +92,10 @@ void report(
 }
 
 // reports on a list element test:
+template <class C>
 void reportLE(
   const char* fnm,
-  ListElement* pLE,
+  ListElement<C>* pLE,
 	const char* exp)
 {
 	if (exp)
@@ -120,7 +128,7 @@ int main(int argc, const char * argv[])
 	static const char gethead[] = "getHead()";
 	static const char gettail[] = "getTail()";
 	
-	List list;
+	List<OBJECT> list;
 	
 	std::cout << "list should be empty:\n";
 	
@@ -170,7 +178,7 @@ int main(int argc, const char * argv[])
 	static const char getfront[] = "getFront()";
 	static const char getback[] = "getBack()";
 	
-	Queue queue;
+	Queue<OBJECT> queue;
 	
 	std::cout << "queue should be empty:\n";
 	
@@ -215,7 +223,7 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "Testing Stack:\n\n";
 	
-	Stack stack;
+	Stack<OBJECT> stack;
 	
 	static const char f_push[] = "Push()";
 	static const char f_pop[] = "Pop()";

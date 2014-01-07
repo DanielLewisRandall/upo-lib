@@ -33,44 +33,48 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "upo-lib.h"
 
+template <class B> class List;
+
+template <class C>
 class ListElement // represents a List Element
 {
-	friend class List;
+	friend class List<C>;
 	
 	private:
 		ListElement* m_pNext; // pointer to the Next element
 
 	public:
-		OBJECT* m_pObject; // pointer to an Object
+		C* m_pObject; // pointer to an Object
 		
-		ListElement(OBJECT* pObject); // Element constructor
+		ListElement(C* pObject); // Element constructor
 		
 		ListElement* getNext(); // get pointer to next element
 };
 
+template <class D>
 class List // represents a List
 {
 	private:
 		uint32_t m_nCount;
-		ListElement* m_pHead; // pointer to the Head element
-		ListElement* m_pTail; // pointer to the Tail element
+		ListElement<D>* m_pHead; // pointer to the Head element
+		ListElement<D>* m_pTail; // pointer to the Tail element
 
 	public:
 		uint32_t getCount(); // get count of elements
 		
-		ListElement* getHead(); // get pointer to the Head element
+		ListElement<D>* getHead(); // get pointer to the Head element
 	
-		ListElement* getTail();  // get pointer to the Tail element
+		ListElement<D>* getTail();  // get pointer to the Tail element
 		
 		List(); // List constructor
 		
 		~List(); // List destructor
 		
-		ListElement* AddHead(OBJECT* pObject); // AddHead function
+		ListElement<D>* AddHead(D* pObject); // AddHead function
 		
-		ListElement* AddTail(OBJECT* pObject); // AddTail function
+		ListElement<D>* AddTail(D* pObject); // AddTail function
 		
-		OBJECT* RemoveHead(); // RemoveHead function
+		D* RemoveHead(); // RemoveHead function
 };
 
 #endif /* defined(__UPO_LIB__List__) */

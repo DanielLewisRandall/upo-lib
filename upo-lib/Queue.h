@@ -36,25 +36,26 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "List.h"
 
+template <class C>
 class Queue // represents a Queue
 {
 	private:
-		List m_List;
+		List<C> m_List;
 
 	public:
 		uint32_t getCount(); // get count of elements
 
-		ListElement* getFront(); // get pointer to the Front element
+		ListElement<C>* getFront(); // get pointer to the Front element
 
-		ListElement* getBack();  // get pointer to the Back element
+		ListElement<C>* getBack();  // get pointer to the Back element
 
 		Queue(); // Queue constructor
 
 		~Queue(); // Queue destructor
 
-		ListElement* Enqueue(OBJECT* pObject); // Enqueue function
+		ListElement<C>* Enqueue(C* pObject); // Enqueue function
 
-		OBJECT* Dequeue(); // Dequeue function
+		C* Dequeue(); // Dequeue function
 };
 
 #endif /* defined(__UPO_LIB__Queue__) */

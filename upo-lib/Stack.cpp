@@ -31,36 +31,43 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "List.h"
 #include "Stack.h"
 
-uint32_t Stack::getCount()
+template <class C>
+uint32_t Stack<C>::getCount()
 {
 	return m_List.getCount();
 }
 
-ListElement* Stack::getTop()
+template <class C>
+ListElement<C>* Stack<C>::getTop()
 {
 	return m_List.getHead();
 }
 
-ListElement* Stack::getBottom()
+template <class C>
+ListElement<C>* Stack<C>::getBottom()
 {
 	return m_List.getTail();
 }
 
-Stack::Stack() : m_List() // Stack constructor
+template <class C>
+Stack<C>::Stack() : m_List() // Stack constructor
 {
 }
 
-Stack::~Stack() // Stack destructor
+template <class C>
+Stack<C>::~Stack() // Stack destructor
 {
 	m_List.~List();
 }
 
-ListElement* Stack::Push(OBJECT* pObject) // Push function
+template <class C>
+ListElement<C>* Stack<C>::Push(C* pObject) // Push function
 {
 	return m_List.AddHead(pObject);
 }
 
-OBJECT* Stack::Pop() // Pop function
+template <class C>
+C* Stack<C>::Pop() // Pop function
 {
 	return m_List.RemoveHead();
 }

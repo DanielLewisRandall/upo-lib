@@ -30,36 +30,43 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "Queue.h"
 
-uint32_t Queue::getCount()
+template <class C>
+uint32_t Queue<C>::getCount()
 {
 	return m_List.getCount();
 }
 
-ListElement* Queue::getFront()
+template <class C>
+ListElement<C>* Queue<C>::getFront()
 {
 	return m_List.getHead();
 }
 
-ListElement* Queue::getBack()
+template <class C>
+ListElement<C>* Queue<C>::getBack()
 {
 	return m_List.getTail();
 }
 
-Queue::Queue() : m_List() // Queue constructor
+template <class C>
+Queue<C>::Queue() : m_List() // Queue constructor
 {
 }
 
-Queue::~Queue() // Queue destructor
+template <class C>
+Queue<C>::~Queue() // Queue destructor
 {
 	m_List.~List();
 }
 
-ListElement* Queue::Enqueue(OBJECT* pObject) // Enqueue function
+template <class C>
+ListElement<C>* Queue<C>::Enqueue(C* pObject) // Enqueue function
 {
 	return m_List.AddTail(pObject);
 }
 
-OBJECT* Queue::Dequeue() // Dequeue function
+template <class C>
+C* Queue<C>::Dequeue() // Dequeue function
 {
 	return m_List.RemoveHead();
 }

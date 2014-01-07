@@ -36,25 +36,26 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "List.h"
 
+template <class C>
 class Stack // represents a Stack
 {
 	private:
-		List m_List;
+		List<C> m_List;
 
 	public:
 		uint32_t getCount(); // get count of elements
 		
-		ListElement* getTop(); // get pointer to the Top element
+		ListElement<C>* getTop(); // get pointer to the Top element
 
-		ListElement* getBottom();  // get pointer to the Bottom element
+		ListElement<C>* getBottom();  // get pointer to the Bottom element
 
 		Stack(); // Stack constructor
 		
 		~Stack(); // Stack destructor
 		
-		ListElement* Push(OBJECT* pObject); // Push function
+		ListElement<C>* Push(C* pObject); // Push function
 		
-		OBJECT* Pop(); // Pop function
+		C* Pop(); // Pop function
 };
 
 #endif /* defined(__UPO_LIB__Stack__) */

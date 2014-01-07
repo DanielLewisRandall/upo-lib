@@ -30,40 +30,47 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "List.h"
 
-ListElement::ListElement(OBJECT* pObject) // Element constructor
+template <class C>
+ListElement<C>::ListElement(C* pObject) // Element constructor
 {
 	m_pObject = pObject;
 	m_pNext = NULL;
 }
 
-ListElement* ListElement::getNext()
+template <class C>
+ListElement<C>* ListElement<C>::getNext()
 {
 	return m_pNext;
 }
 
-uint32_t List::getCount()
+template <class D>
+uint32_t List<D>::getCount()
 {
 	return m_nCount;
 }
 
-ListElement* List::getHead()
+template <class D>
+ListElement<D>* List<D>::getHead()
 {
 	return m_pHead;
 }
 
-ListElement* List::getTail()
+template <class D>
+ListElement<D>* List<D>::getTail()
 {
 	return m_pTail;
 }
 
-List::List() // List constructor
+template <class D>
+List<D>::List() // List constructor
 {
 	m_nCount = 0;
 	m_pHead = NULL;
 	m_pTail = NULL;
 }
 
-List::~List() // List destructor
+template <class D>
+List<D>::~List() // List destructor
 {
 	while (m_pHead) // while the Head element is not NULL,
 	{
@@ -71,14 +78,15 @@ List::~List() // List destructor
 	}
 }
 
-ListElement* List::AddHead(OBJECT* pObject) // AddHead function
+template <class D>
+ListElement<D>* List<D>::AddHead(D* pObject) // AddHead function
 {
 	if (!pObject) // if the object pointer is NULL,
 	{
-		return NULL; // do not Push
+		return NULL; // do not add head
 	}
 	
-	ListElement* pElement = new ListElement(pObject); // create a new element
+	ListElement<D>* pElement = new ListElement<D>(pObject); // create a new element
 	
 	if (pElement) // if the element was allocated,
 	{
@@ -100,14 +108,15 @@ ListElement* List::AddHead(OBJECT* pObject) // AddHead function
 	return pElement; // return the new element pointer
 }
 
-ListElement* List::AddTail(OBJECT* pObject) // AddTail function
+template <class D>
+ListElement<D>* List<D>::AddTail(D* pObject) // AddTail function
 {
 	if (!pObject) // if the object pointer is NULL,
 	{
 		return NULL; // do not add tail
 	}
 	
-	ListElement* pElement = new ListElement(pObject); // create a new element
+	ListElement<D>* pElement = new ListElement<D>(pObject); // create a new element
 	
 	if (pElement) // if the element was allocated,
 	{
@@ -129,9 +138,10 @@ ListElement* List::AddTail(OBJECT* pObject) // AddTail function
 	return pElement; // return the new element pointer
 }
 
-OBJECT* List::RemoveHead() // RemoveHead function
+template <class D>
+D* List<D>::RemoveHead() // RemoveHead function
 {
-	ListElement* pElement = m_pHead; // get the element at the Head of the List
+	ListElement<D>* pElement = m_pHead; // get the element at the Head of the List
 	
 	if (pElement) // if the element is not NULL,
 	{
@@ -142,7 +152,7 @@ OBJECT* List::RemoveHead() // RemoveHead function
 			m_pTail = NULL; // set the Tail element to NULL
 		}
 		
-		OBJECT* pObject = pElement->m_pObject; // get the object pointer from the element
+		D* pObject = pElement->m_pObject; // get the object pointer from the element
 		
 		m_nCount--;
 		
