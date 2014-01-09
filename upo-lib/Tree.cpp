@@ -30,16 +30,18 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "Tree.h"
 
-TreeBranch::TreeBranch(OBJECT* pObject) : m_Branches()
+template <class C>
+TreeBranch<C>::TreeBranch(C* pObject) : m_Branches()
 {
 	m_pObject = pObject;
 }
 
-TreeBranch::~TreeBranch()
+template <class C>
+TreeBranch<C>::~TreeBranch()
 {
 	while (m_Branches.getHead())
 	{
-		TreeBranch* pBranch = asBranch(m_Branches.RemoveHead());
+		TreeBranch<C>* pBranch = asBranch(m_Branches.RemoveHead());
 		
 		if (pBranch)
 		{
@@ -48,17 +50,20 @@ TreeBranch::~TreeBranch()
 	}
 }
 
-TreeBranch* Tree::getTrunk()
+template <class D>
+TreeBranch<D>* Tree<D>::getTrunk()
 {
 	return m_pTrunk;
 }
 
-Tree::Tree(OBJECT* pObject)
+template <class D>
+Tree<D>::Tree(D* pObject)
 {
-	m_pTrunk = TreeBranch::newBranch(pObject);
+	m_pTrunk = TreeBranch<D>::newBranch(pObject);
 }
 
-Tree::~Tree()
+template <class D>
+Tree<D>::~Tree()
 {
 	if (m_pTrunk)
 	{

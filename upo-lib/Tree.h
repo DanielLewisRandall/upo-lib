@@ -33,53 +33,56 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef __UPO_LIB__Tree__
 #define __UPO_LIB__Tree__
 
+// NOTE:
+//  always include template class implementation files
+//  to prevent compiler errors:
 #include "dList.h"
+#include "dList.cpp"
 
+
+template <class C>
 class TreeBranch // represents a Tree Branch
 {
 	public:
-		dList m_Branches;
+		dList<TreeBranch<C>> m_Branches;
 
-		OBJECT* m_pObject;
+		C* m_pObject;
 
-		TreeBranch(OBJECT* pObject);
+		TreeBranch(C* pObject);
 		
 		~TreeBranch();
 		
-		// utility for accessing the branch object in a dListElement:
-		static TreeBranch* asBranch(dListElement* pElement);
-		
-		// utility for accessing an object pointer as a TreeBranch pointer:
-		static TreeBranch* asBranch(OBJECT* pObject);
+		// utility for accessing list element as a TreeBranch pointer:
+		static TreeBranch<C>* asBranch(dListElement<TreeBranch<C>>* pElement);
 		
 		// utility for creating a new branch for the branch list:
-		static TreeBranch* newBranch(OBJECT* pObject);
+		static TreeBranch<C>* newBranch(C* pObject);
 };
 
-inline TreeBranch* TreeBranch::asBranch(dListElement* pElement)
+
+template <class C>
+inline TreeBranch<C>* TreeBranch<C>::asBranch(
+	dListElement<TreeBranch<C>>* pElement)
 {
-	return (pElement) ? asBranch(pElement->m_pObject) : NULL;
+	return (pElement) ? pElement->m_pObject : NULL;
 }
 
-inline TreeBranch* TreeBranch::asBranch(OBJECT* pObject)
+template <class C>
+inline TreeBranch<C>* TreeBranch<C>::newBranch(C* pObject)
 {
-	return reinterpret_cast<TreeBranch*>(pObject);
+	return new TreeBranch<C>(pObject);
 }
 
-inline TreeBranch* TreeBranch::newBranch(OBJECT* pObject)
-{
-	return new TreeBranch(pObject);
-}
-
+template <class D>
 class Tree // represents a Tree
 {
 	private:
-		TreeBranch* m_pTrunk;
+		TreeBranch<D>* m_pTrunk;
 		
 	public:
-		TreeBranch* getTrunk();
+		TreeBranch<D>* getTrunk();
 		
-		Tree(OBJECT* pObject);
+		Tree(D* pObject);
 		
 		~Tree();
 };

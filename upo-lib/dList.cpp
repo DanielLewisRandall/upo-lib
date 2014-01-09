@@ -30,25 +30,29 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "dList.h"
 
-dListElement::dListElement(OBJECT* pObject) // Element constructor
+template <class C>
+dListElement<C>::dListElement(C* pObject) // Element constructor
 {
 	m_pObject = pObject;
 	m_pNext = NULL;
 	m_pPrev = NULL;
 }
 
-dListElement* dListElement::getNext()
+template <class C>
+dListElement<C>* dListElement<C>::getNext()
 {
 	return m_pNext;
 }
 
-dListElement* dListElement::getPrev()
+template <class C>
+dListElement<C>* dListElement<C>::getPrev()
 {
 	return m_pPrev;
 }
 
 // sets head/tail pointers when element added to empty list
-void dList::newEnds(dListElement* pNewElement)
+template <class D>
+void dList<D>::newEnds(dListElement<D>* pNewElement)
 {
 	if (!m_pHead) // if the Head element is NULL,
 	{
@@ -62,7 +66,8 @@ void dList::newEnds(dListElement* pNewElement)
 }
 
 // updates head/tail pointers when an element is removed
-void dList::fixEnds(dListElement* pRemElement)
+template <class D>
+void dList<D>::fixEnds(dListElement<D>* pRemElement)
 {
 	if (pRemElement) // if the removed element is NULL,
 	{
@@ -90,29 +95,34 @@ void dList::fixEnds(dListElement* pRemElement)
 	}
 }
 
-uint32_t dList::getCount()
+template <class D>
+uint32_t dList<D>::getCount()
 {
 	return m_nCount;
 }
 
-dListElement* dList::getHead()
+template <class D>
+dListElement<D>* dList<D>::getHead()
 {
 	return m_pHead;
 }
 
-dListElement* dList::getTail()
+template <class D>
+dListElement<D>* dList<D>::getTail()
 {
 	return m_pTail;
 }
 
-dList::dList() // dList constructor
+template <class D>
+dList<D>::dList() // dList constructor
 {
 	m_nCount = 0;
 	m_pHead = NULL;
 	m_pTail = NULL;
 }
 
-dList::~dList() // dList destructor
+template <class D>
+dList<D>::~dList() // dList destructor
 {
 	while (m_pHead) // while the Head element is not NULL,
 	{
@@ -120,19 +130,21 @@ dList::~dList() // dList destructor
 	}
 }
 
-dListElement* dList::AddHead(OBJECT* pObject)
+template <class D>
+dListElement<D>* dList<D>::AddHead(D* pObject)
 {
 	return InsertBefore(m_pHead, pObject);
 }
 
-dListElement* dList::InsertBefore(dListElement* pElement, OBJECT* pObject)
+template <class D>
+dListElement<D>* dList<D>::InsertBefore(dListElement<D>* pElement, D* pObject)
 {
 	if (!pObject) // if the object pointer is NULL,
 	{
 		return NULL; // do not insert
 	}
 	
-	dListElement* pNewElement = new dListElement(pObject); // create a new element
+	dListElement<D>* pNewElement = new dListElement<D>(pObject); // create a new element
 	
 	if (pNewElement) // if the new element was allocated,
 	{
@@ -155,14 +167,15 @@ dListElement* dList::InsertBefore(dListElement* pElement, OBJECT* pObject)
 	return pElement; // return the new element pointer
 }
 
-dListElement* dList::InsertAfter(dListElement* pElement, void* pObject)
+template <class D>
+dListElement<D>* dList<D>::InsertAfter(dListElement<D>* pElement, D* pObject)
 {
 	if (!pObject) // if the object pointer is NULL,
 	{
 		return NULL; // do not insert
 	}
 	
-	dListElement* pNewElement = new dListElement(pObject); // create a new element
+	dListElement<D>* pNewElement = new dListElement<D>(pObject); // create a new element
 	
 	if (pNewElement) // if the new element was allocated,
 	{
@@ -185,22 +198,26 @@ dListElement* dList::InsertAfter(dListElement* pElement, void* pObject)
 	return pElement; // return the new element pointer
 }
 
-dListElement* dList::AddTail(OBJECT* pObject) // AddTail function
+template <class D>
+dListElement<D>* dList<D>::AddTail(D* pObject) // AddTail function
 {
 	return InsertAfter(m_pTail, pObject);
 }
 
-OBJECT* dList::RemoveHead()
+template <class D>
+D* dList<D>::RemoveHead()
 {
 	return Remove(m_pHead);
 }
 
-OBJECT* dList::RemoveTail()
+template <class D>
+D* dList<D>::RemoveTail()
 {
 	return Remove(m_pTail);
 }
 
-OBJECT* dList::Remove(dListElement* pElement)
+template <class D>
+D* dList<D>::Remove(dListElement<D>* pElement)
 {
 	if (pElement) // if the element is not NULL,
 	{
@@ -220,7 +237,7 @@ OBJECT* dList::Remove(dListElement* pElement)
 		fixEnds(pElement);
 		
 		// get the object pointer from the element
-		OBJECT* pObject = pElement->m_pObject;
+		D* pObject = pElement->m_pObject;
 		
 		m_nCount--;
 		

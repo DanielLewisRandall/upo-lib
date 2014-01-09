@@ -31,18 +31,21 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // A circular queue class, restricted to sizes that are a power of 2.
 // Uses in this program: real-time parsing, high-performance buffering.
 
+// NOTE: the classes in this file have not been unit tested, yet!
+
 #ifndef __UPO_LIB__CircularQueue__
 #define __UPO_LIB__CircularQueue__
 
 #include "upo-lib.h"
 
+template <class C>
 class CircularQueue
 {
 	public:
 		uint32_t m_nEnqueues;  // total number of enqueue operations
 		uint32_t m_nDequeues;  // total number of dequeue operations
 		uint32_t m_nIndexMask; // Index Mask - a bitmask
-		OBJECT** m_ppObjects;  // pointer to array of object pointers
+		C** m_ppObjects;  // pointer to array of object pointers
 
 		CircularQueue();
 
@@ -52,11 +55,11 @@ class CircularQueue
 
 		bool Init(uint32_t dwSize);
 
-		OBJECT* Enqueue(OBJECT* pObject);
+		C* Enqueue(C* pObject);
 
-		OBJECT* Dequeue();
+		C* Dequeue();
 
-		OBJECT* Peek();
+		C* Peek();
 
 		uint32_t Size();
 };

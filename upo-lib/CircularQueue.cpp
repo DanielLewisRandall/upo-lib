@@ -31,17 +31,20 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "CircularQueue.h"
 
 
-CircularQueue::CircularQueue()
+template <class C>
+CircularQueue<C>::CircularQueue()
 {
 	m_ppObjects = NULL;
 }
 
-CircularQueue::~CircularQueue()
+template <class C>
+CircularQueue<C>::~CircularQueue()
 {
 	Reset();
 }
 
-void CircularQueue::Reset()
+template <class C>
+void CircularQueue<C>::Reset()
 {
 	// free array of object pointers:
 	if (m_ppObjects)
@@ -55,7 +58,8 @@ void CircularQueue::Reset()
 	m_ppObjects = NULL;
 }
 
-bool CircularQueue::Init(uint32_t dwSize)
+template <class C>
+bool CircularQueue<C>::Init(uint32_t dwSize)
 {
 	// allow object re-use:
 	Reset();
@@ -76,14 +80,15 @@ bool CircularQueue::Init(uint32_t dwSize)
 	}
 
 	// allocate the queue object pointers:
-	m_ppObjects = new OBJECT*[dwSize];
+	m_ppObjects = new C*[dwSize];
 
 	// will return true only if all of the above succeeded:
 	return (m_ppObjects != NULL);
 }
 
 // enqueue function:
-OBJECT* CircularQueue::Enqueue(OBJECT* pObject)
+template <class C>
+C* CircularQueue<C>::Enqueue(C* pObject)
 {
 	// check for overflow:
 	if (Size() > m_nIndexMask)
@@ -104,10 +109,11 @@ OBJECT* CircularQueue::Enqueue(OBJECT* pObject)
 }
 
 // dequeue function:
-OBJECT* CircularQueue::Dequeue()
+template <class C>
+C* CircularQueue<C>::Dequeue()
 {
 	// get the object pointer value:
-	OBJECT* pObject = Peek();
+	C* pObject = Peek();
 
 	// increment dequeue count (if no peek error):
 	if (pObject != NULL)
@@ -118,7 +124,8 @@ OBJECT* CircularQueue::Dequeue()
 	return pObject;
 }
 
-OBJECT* CircularQueue::Peek()
+template <class C>
+C* CircularQueue<C>::Peek()
 {
 	// check for underflow:
 	if (Size() == 0)
@@ -135,7 +142,8 @@ OBJECT* CircularQueue::Peek()
 
 // returns the distance between m_nDequeues and m_nEnqueues
 // (the size of the actual queue contents):
-uint32_t CircularQueue::Size()
+template <class C>
+uint32_t CircularQueue<C>::Size()
 {
 	if (m_nDequeues < m_nEnqueues)
 	{

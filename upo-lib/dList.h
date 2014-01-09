@@ -35,61 +35,65 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "upo-lib.h"
 
+template <class B> class dList;
+
+template <class C>
 class dListElement // represents a double-linked List Element
 {
-	friend class dList;
+	friend class dList<C>;
 	
 	private:
 		dListElement* m_pNext; // pointer to the Next element
 		dListElement* m_pPrev; // pointer to the Previous element
 
 	public:
-		OBJECT* m_pObject; // pointer to an Object
+		C* m_pObject; // pointer to an Object
 		
-		dListElement(OBJECT* pObject); // Element constructor
+		dListElement(C* pObject); // Element constructor
 		
 		dListElement* getNext(); // get pointer to next element
 		
 		dListElement* getPrev(); // get pointer to previous element
 };
 
+template <class D>
 class dList // represents a double-linked List
 {
 	private:
 		uint32_t m_nCount;
-		dListElement* m_pHead; // pointer to the Head element
-		dListElement* m_pTail; // pointer to the Tail element
+		dListElement<D>* m_pHead; // pointer to the Head element
+		dListElement<D>* m_pTail; // pointer to the Tail element
 		
 		// sets head/tail pointers when element added to empty list
-		void newEnds(dListElement* pNewElement);
+		void newEnds(dListElement<D>* pNewElement);
 
 		// updates head/tail pointers when an element is removed
-		void fixEnds(dListElement* pNewElement);
+		void fixEnds(dListElement<D>* pNewElement);
 
 	public:
 		uint32_t getCount(); // get count of elements
 		
-		dListElement* getHead(); // get pointer to the Head element
+		dListElement<D>* getHead(); // get pointer to the Head element
 	
-		dListElement* getTail();  // get pointer to the Tail element
+		dListElement<D>* getTail();  // get pointer to the Tail element
 		
 		dList(); // dList constructor
 		
 		~dList(); // dList destructor
 		
-		dListElement* AddHead(OBJECT* pObject);
+		dListElement<D>* AddHead(D* pObject);
 		
-		dListElement* InsertBefore(dListElement* pElement, OBJECT* pObject);
+		dListElement<D>* InsertBefore(dListElement<D>* pElement, D* pObject);
 		
-		dListElement* InsertAfter(dListElement* pElement, OBJECT* pObject);
+		dListElement<D>* InsertAfter(dListElement<D>* pElement, D* pObject);
 		
-		dListElement* AddTail(OBJECT* pObject);
+		dListElement<D>* AddTail(D* pObject);
 
-		OBJECT* RemoveHead();
+		D* RemoveHead();
 
-		OBJECT* RemoveTail();
+		D* RemoveTail();
 
-		OBJECT* Remove(dListElement* pElement);
+		D* Remove(dListElement<D>* pElement);
 };
 
 #endif /* defined(__UPO_LIB__dList__) */
