@@ -71,13 +71,13 @@ void reportNT(
 // reports on an OBJECT test:
 void report(
 	const char* fnm,
-	OBJECT* got,
+	const char* got,
 	const char* exp)
 {
 	g_tests++;
 	
-	const char* cGot = (const char*)got;
-	const char* cExp = (const char*)exp;
+	const char* cGot = got;
+	const char* cExp = exp;
 	
 	if (got == exp)
 	{
@@ -92,10 +92,9 @@ void report(
 }
 
 // reports on a list element test:
-template <class C>
 void reportLE(
   const char* fnm,
-  ListElement<C>* pLE,
+  ListElement<const char>* pLE,
 	const char* exp)
 {
 	if (exp)
@@ -107,7 +106,6 @@ void reportLE(
 		report(fnm, NULL, exp);
 	}
 }
-
 
 int main(int argc, const char * argv[])
 {
@@ -128,7 +126,7 @@ int main(int argc, const char * argv[])
 	static const char gethead[] = "getHead()";
 	static const char gettail[] = "getTail()";
 	
-	List<OBJECT> list;
+	List<const char> list;
 	
 	std::cout << "list should be empty:\n";
 	
@@ -139,12 +137,12 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "add some items:\n";
 	
-	reportLE(addhead, list.AddHead((OBJECT*)alpha),   alpha);
-	reportLE(addhead, list.AddHead((OBJECT*)bravo),   bravo);
-	reportLE(addhead, list.AddHead((OBJECT*)charlie), charlie);
-	reportLE(addtail, list.AddTail((OBJECT*)delta),   delta);
-	reportLE(addtail, list.AddTail((OBJECT*)echo),    echo);
-	reportLE(addtail, list.AddTail((OBJECT*)foxtrot), foxtrot);
+	reportLE(addhead, list.AddHead(alpha),   alpha);
+	reportLE(addhead, list.AddHead(bravo),   bravo);
+	reportLE(addhead, list.AddHead(charlie), charlie);
+	reportLE(addtail, list.AddTail(delta),   delta);
+	reportLE(addtail, list.AddTail(echo),    echo);
+	reportLE(addtail, list.AddTail(foxtrot), foxtrot);
 	
 	std::cout << "list should have 6 elements:\n";
 	
@@ -178,7 +176,7 @@ int main(int argc, const char * argv[])
 	static const char getfront[] = "getFront()";
 	static const char getback[] = "getBack()";
 	
-	Queue<OBJECT> queue;
+	Queue<const char> queue;
 	
 	std::cout << "queue should be empty:\n";
 	
@@ -189,12 +187,12 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "enqueue some items:\n";
 	
-	reportLE(enqueue, queue.Enqueue((OBJECT*)alpha),   alpha);
-	reportLE(enqueue, queue.Enqueue((OBJECT*)bravo),   bravo);
-	reportLE(enqueue, queue.Enqueue((OBJECT*)charlie), charlie);
-	reportLE(enqueue, queue.Enqueue((OBJECT*)delta),   delta);
-	reportLE(enqueue, queue.Enqueue((OBJECT*)echo),    echo);
-	reportLE(enqueue, queue.Enqueue((OBJECT*)foxtrot), foxtrot);
+	reportLE(enqueue, queue.Enqueue(alpha),   alpha);
+	reportLE(enqueue, queue.Enqueue(bravo),   bravo);
+	reportLE(enqueue, queue.Enqueue(charlie), charlie);
+	reportLE(enqueue, queue.Enqueue(delta),   delta);
+	reportLE(enqueue, queue.Enqueue(echo),    echo);
+	reportLE(enqueue, queue.Enqueue(foxtrot), foxtrot);
 	
 	std::cout << "queue should have 6 elements:\n";
 	
@@ -223,7 +221,7 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "Testing Stack:\n\n";
 	
-	Stack<OBJECT> stack;
+	Stack<const char> stack;
 	
 	static const char f_push[] = "Push()";
 	static const char f_pop[] = "Pop()";
@@ -239,12 +237,12 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "push some items:\n";
 	
-	reportLE(f_push, stack.Push((OBJECT*)alpha),   alpha);
-	reportLE(f_push, stack.Push((OBJECT*)bravo),   bravo);
-	reportLE(f_push, stack.Push((OBJECT*)charlie), charlie);
-	reportLE(f_push, stack.Push((OBJECT*)delta),   delta);
-	reportLE(f_push, stack.Push((OBJECT*)echo),    echo);
-	reportLE(f_push, stack.Push((OBJECT*)foxtrot), foxtrot);
+	reportLE(f_push, stack.Push(alpha),   alpha);
+	reportLE(f_push, stack.Push(bravo),   bravo);
+	reportLE(f_push, stack.Push(charlie), charlie);
+	reportLE(f_push, stack.Push(delta),   delta);
+	reportLE(f_push, stack.Push(echo),    echo);
+	reportLE(f_push, stack.Push(foxtrot), foxtrot);
 	
 	std::cout << "stack should have 6 elements:\n";
 	
