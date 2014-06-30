@@ -42,6 +42,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "../../upo-lib/Queue.cpp"
 #include "../../upo-lib/Stack.h"
 #include "../../upo-lib/Stack.cpp"
+#include "../../upo-lib/SquareArray.h"
+#include "../../upo-lib/SquareArray.cpp"
 
 int g_tests = 0;
 int g_passd = 0;
@@ -109,6 +111,7 @@ void reportLE(
 
 int main(int argc, const char * argv[])
 {
+	static const char schars[]   = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	static const char alpha[]   = "ALPHA";
 	static const char bravo[]   = "BRAVO";
 	static const char charlie[] = "CHARLIE";
@@ -265,6 +268,96 @@ int main(int argc, const char * argv[])
 	report(f_pop, stack.Pop(), NULL);
 	reportLE(gettop, stack.getTop(), NULL);
 	reportLE(getbottom, stack.getBottom(), NULL);
+	
+	std::cout << "\n";
+	std::cout << "\n";
+	
+	for (int32_t size = 2; size <= 6; size++)
+	{
+		std::cout << "Testing SquareArray (size = " << size << "):\n\n";
+		
+		SquareArray<const char> squareArrayOne;
+		SquareArray<const char> squareArrayTwo;
+		
+		squareArrayOne.Init(size);
+		squareArrayTwo.Init(size);
+		
+		int32_t val = 0;
+		
+		for (int32_t row = 0; row < size; row++)
+		{
+				for (int32_t col = 0; col < size; col++)
+				{
+						squareArrayOne.Set(row, col, &schars[val]);
+						squareArrayTwo.Set(row, col, &schars[val++]);
+				}
+		}
+		
+		for (int32_t row = 0; row < size; row++)
+		{
+				for (int32_t col = 0; col < size; col++)
+				{
+						const char* cellValue = squareArrayOne.Get(row, col);
+						std::cout << *cellValue << " ";
+				}
+				
+				std::cout << '\n';
+		}
+		
+		std::cout << "\nrotated clockwise:\n\n";
+		
+		squareArrayOne.Rotate(CW);
+		
+		for (int32_t row = 0; row < size; row++)
+		{
+				for (int32_t col = 0; col < size; col++)
+				{
+						const char* cellValue = squareArrayOne.Get(row, col);
+						std::cout << *cellValue << " ";
+				}
+				
+				std::cout << '\n';
+		}
+		
+		std::cout << "\nrotated counter-clockwise:\n\n";
+		
+		squareArrayOne.Rotate(CCW);
+		
+		for (int32_t row = 0; row < size; row++)
+		{
+				for (int32_t col = 0; col < size; col++)
+				{
+						const char* cellValue = squareArrayOne.Get(row, col);
+						std::cout << *cellValue << " ";
+				}
+				
+				std::cout << '\n';
+		}
+
+		g_tests++;
+		
+		int32_t matches = 0;
+			
+		for (int32_t row = 0; row < size; row++)
+		{
+				for (int32_t col = 0; col < size; col++)
+				{
+						matches +=
+							(squareArrayOne.Get(row, col) == squareArrayTwo.Get(row, col)) ?
+							1 : 0;
+				}
+		}
+		
+		if (matches == (size * size))
+		{
+				g_passd++;
+				std::cout << "\nPASS: arrays match.\n\n";
+		}
+		else
+		{
+				std::cout << "\nFAIL: arrays do not match.\n\n";
+		}
+	}
 	
 	std::cout << "\n";
 	std::cout << "\n";

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		650B6E91186FEF2D000BC0ED /* dList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650B6E8F186FEF2D000BC0ED /* dList.cpp */; };
 		650B6E92186FEF2D000BC0ED /* dList.h in Headers */ = {isa = PBXBuildFile; fileRef = 650B6E90186FEF2D000BC0ED /* dList.h */; };
+		6517F82619608F95007C3E47 /* SquareArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6517F82419608F95007C3E47 /* SquareArray.cpp */; };
+		6517F82719608F95007C3E47 /* SquareArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 6517F82519608F95007C3E47 /* SquareArray.h */; };
 		657207C81868033E0055729F /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657207BD1868033E0055729F /* Tree.cpp */; };
 		657207C91868033E0055729F /* Tree.h in Headers */ = {isa = PBXBuildFile; fileRef = 657207BE1868033E0055729F /* Tree.h */; };
 		657207CA1868033E0055729F /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657207BF1868033E0055729F /* List.cpp */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		650B6E8F186FEF2D000BC0ED /* dList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dList.cpp; sourceTree = "<group>"; };
 		650B6E90186FEF2D000BC0ED /* dList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dList.h; sourceTree = "<group>"; };
+		6517F82419608F95007C3E47 /* SquareArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SquareArray.cpp; sourceTree = "<group>"; };
+		6517F82519608F95007C3E47 /* SquareArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareArray.h; sourceTree = "<group>"; };
 		657207A01868017E0055729F /* libupo-lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libupo-lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657207BD1868033E0055729F /* Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tree.cpp; sourceTree = "<group>"; };
 		657207BE1868033E0055729F /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 				657207C31868033E0055729F /* Stack.cpp */,
 				657207C61868033E0055729F /* CircularQueue.h */,
 				657207C71868033E0055729F /* CircularQueue.cpp */,
+				6517F82519608F95007C3E47 /* SquareArray.h */,
+				6517F82419608F95007C3E47 /* SquareArray.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -96,6 +102,7 @@
 				657207CB1868033E0055729F /* List.h in Headers */,
 				657207C91868033E0055729F /* Tree.h in Headers */,
 				650B6E92186FEF2D000BC0ED /* dList.h in Headers */,
+				6517F82719608F95007C3E47 /* SquareArray.h in Headers */,
 				657207CF1868033E0055729F /* Queue.h in Headers */,
 				657207D01868033E0055729F /* Stack.h in Headers */,
 				657207CC1868033E0055729F /* upo-lib.h in Headers */,
@@ -157,6 +164,7 @@
 				657207CE1868033E0055729F /* Stack.cpp in Sources */,
 				657207CD1868033E0055729F /* Queue.cpp in Sources */,
 				650B6E91186FEF2D000BC0ED /* dList.cpp in Sources */,
+				6517F82619608F95007C3E47 /* SquareArray.cpp in Sources */,
 				657207D21868033E0055729F /* CircularQueue.cpp in Sources */,
 				657207C81868033E0055729F /* Tree.cpp in Sources */,
 				657207CA1868033E0055729F /* List.cpp in Sources */,

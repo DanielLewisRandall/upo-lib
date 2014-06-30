@@ -20,6 +20,13 @@
 			remoteGlobalIDString = 657207A01868017E0055729F;
 			remoteInfo = "upo-lib";
 		};
+		65F0E91C1960EEDD00C6A246 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 657207D6186806B70055729F /* upo-lib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6572079F1868017E0055729F;
+			remoteInfo = "upo-lib";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,6 +113,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				65F0E91D1960EEDD00C6A246 /* PBXTargetDependency */,
 			);
 			name = "upo-lib-test";
 			productName = "upo-lib-test";
@@ -164,6 +172,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65F0E91D1960EEDD00C6A246 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "upo-lib";
+			targetProxy = 65F0E91C1960EEDD00C6A246 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		657207B8186801BD0055729F /* Debug */ = {
@@ -275,6 +291,7 @@
 				657207BC186801BD0055729F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
